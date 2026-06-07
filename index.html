@@ -33,8 +33,8 @@ body{font-family:'Tajawal',sans-serif;background:var(--black);color:var(--white)
 #page-login{display:none;min-height:100vh;padding-top:40px}
 .login-wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:2rem 1rem;background:radial-gradient(ellipse at center,#1a1500 0%,var(--black) 70%)}
 .login-box{width:380px;max-width:100%}
-.login-logo-area{text-align:center;margin-bottom:2.5rem}
-.login-logo-area img{max-width:200px;max-height:120px;object-fit:contain}
+.login-logo-area{text-align:center;margin-bottom:2rem}
+.login-logo-area img{width:clamp(120px,30vw,220px);height:auto;object-fit:contain}
 .login-tagline{font-size:11px;color:var(--gold);letter-spacing:0.2em;text-transform:uppercase;margin-top:12px}
 .login-divider-gold{width:60px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:1.5rem auto}
 .login-field{margin-bottom:1rem}
@@ -47,7 +47,7 @@ body{font-family:'Tajawal',sans-serif;background:var(--black);color:var(--white)
 .venues-grid{display:flex;flex-direction:column;gap:10px;margin-top:1rem}
 .venue-card-login{background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:10px;padding:16px 20px;cursor:pointer;display:flex;align-items:center;gap:14px;transition:all 0.2s}
 .venue-card-login:hover{background:rgba(201,168,76,0.08);border-color:var(--gold)}
-.venue-card-login img{width:50px;height:50px;object-fit:contain}
+.venue-card-login img{width:clamp(40px,8vw,56px);height:clamp(40px,8vw,56px);object-fit:contain}
 .venue-card-login-info h3{font-size:14px;font-weight:500;color:var(--white)}
 .venue-card-login-info p{font-size:11px;color:var(--gray);margin-top:2px}
 .section-label{font-size:10px;color:var(--gold);letter-spacing:0.15em;text-align:center;margin:1.5rem 0 1rem;text-transform:uppercase}
@@ -55,7 +55,7 @@ body{font-family:'Tajawal',sans-serif;background:var(--black);color:var(--white)
 /* CUSTOMER MENU */
 #page-menu{display:none;padding-top:40px}
 .menu-hero{background:linear-gradient(180deg,#1a1200 0%,var(--black) 100%);padding:2.5rem 1.25rem 1.5rem;text-align:center;border-bottom:1px solid var(--border)}
-.menu-hero img{max-width:180px;max-height:100px;object-fit:contain;margin-bottom:1rem}
+.menu-hero img{width:clamp(100px,20vw,180px);height:auto;object-fit:contain;margin-bottom:1rem}
 .menu-hero-back{background:none;border:1px solid var(--border);color:var(--gold);border-radius:20px;padding:5px 16px;font-size:11px;cursor:pointer;font-family:'Tajawal',sans-serif;letter-spacing:0.08em;margin-bottom:1rem;display:inline-block}
 .menu-hero-back:hover{background:rgba(201,168,76,0.1)}
 .menu-cats-wrap{background:var(--black2);border-bottom:1px solid var(--border);padding:12px 1.25rem;display:flex;gap:8px;overflow-x:auto;scrollbar-width:none}
@@ -82,13 +82,13 @@ body{font-family:'Tajawal',sans-serif;background:var(--black);color:var(--white)
 .admin-layout{display:flex;min-height:calc(100vh - 40px)}
 .admin-sidebar{width:220px;background:var(--black2);border-left:1px solid var(--border);display:flex;flex-direction:column;position:fixed;top:40px;right:0;bottom:0;overflow-y:auto}
 .admin-sidebar-logo{padding:1.25rem 1rem;border-bottom:1px solid var(--border);text-align:center}
-.admin-sidebar-logo img{max-width:100px;max-height:60px;object-fit:contain}
+.admin-sidebar-logo img{width:clamp(70px,10vw,110px);height:auto;object-fit:contain}
 .admin-sidebar-logo p{font-size:10px;color:var(--gold);letter-spacing:0.15em;margin-top:6px;text-transform:uppercase}
 .sidebar-sec{font-size:9px;color:var(--gold);letter-spacing:0.15em;padding:1rem 1rem 0.4rem;text-transform:uppercase;opacity:0.7}
 .sidebar-btn{display:flex;align-items:center;gap:10px;padding:11px 1rem;cursor:pointer;font-size:13px;color:var(--gray);border:none;background:none;width:100%;text-align:right;font-family:'Tajawal',sans-serif;transition:all 0.15s;border-right:3px solid transparent}
 .sidebar-btn:hover{background:rgba(201,168,76,0.05);color:var(--white)}
 .sidebar-btn.active{background:rgba(201,168,76,0.08);color:var(--gold);font-weight:500;border-right-color:var(--gold)}
-.sidebar-btn img{width:32px;height:32px;object-fit:contain;opacity:0.8}
+.sidebar-btn img{width:28px;height:28px;object-fit:contain;opacity:0.85;flex-shrink:0}
 .sidebar-bottom{margin-top:auto;padding:1rem;border-top:1px solid var(--border)}
 .sidebar-logout{background:none;border:1px solid var(--border);border-radius:6px;padding:8px;font-size:12px;color:var(--gray);cursor:pointer;font-family:'Tajawal',sans-serif;width:100%;transition:all 0.2s}
 .sidebar-logout:hover{border-color:var(--gold);color:var(--gold)}
@@ -171,6 +171,22 @@ body{font-family:'Tajawal',sans-serif;background:var(--black);color:var(--white)
   .table-head,.table-row{grid-template-columns:48px 1fr 80px 70px}
   .table-head span:nth-child(n+5),.table-row>*:nth-child(n+5){display:none}
   .stats-row{grid-template-columns:1fr 1fr}
+  .login-box{padding:1.5rem 1.25rem}
+  .venues-grid{gap:8px}
+  .venue-card-login{padding:12px 14px}
+  .menu-items-grid{grid-template-columns:repeat(auto-fill,minmax(140px,1fr))}
+}
+/* Tablet */
+@media(min-width:641px) and (max-width:1024px){
+  .login-box{width:420px}
+  .admin-sidebar{width:180px}
+  .admin-main{margin-right:180px}
+  .menu-items-grid{grid-template-columns:repeat(auto-fill,minmax(170px,1fr))}
+}
+/* Desktop */
+@media(min-width:1025px){
+  .menu-items-grid{grid-template-columns:repeat(auto-fill,minmax(190px,1fr))}
+  .login-box{width:420px}
 }
 </style>
 </head>
