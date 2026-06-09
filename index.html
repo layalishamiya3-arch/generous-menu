@@ -539,10 +539,19 @@ window.toggleSidebar=function(){
 };
 
 async function init(){
-  // Sign out any cached session so login always shows fresh
   try{ await signOut(auth); }catch(e){}
   await Promise.all(VENUES.map(v=>loadV(v.id)));
   document.getElementById("loading").style.display="none";
+  // Check if QR code URL param exists - open menu directly
+  const urlParams = new URLSearchParams(window.location.search);
+  const vParam = urlParams.get("v");
+  if(vParam !== null){
+    const idx = parseInt(vParam);
+    if(idx >= 0 && idx <= 2){
+      await openMenu(idx);
+      return;
+    }
+  }
   document.getElementById("pg-login").style.display="block";
   applyT();
 }
