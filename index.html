@@ -539,6 +539,8 @@ window.toggleSidebar=function(){
 };
 
 async function init(){
+  // Sign out any cached session so login always shows fresh
+  try{ await signOut(auth); }catch(e){}
   await Promise.all(VENUES.map(v=>loadV(v.id)));
   document.getElementById("loading").style.display="none";
   document.getElementById("pg-login").style.display="block";
